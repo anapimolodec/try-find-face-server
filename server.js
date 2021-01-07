@@ -13,10 +13,8 @@ const image = require('./image');
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : '0000',
-    database : 'face_brain_api'
+    host : process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
